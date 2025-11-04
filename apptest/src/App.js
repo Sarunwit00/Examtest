@@ -1,50 +1,38 @@
-// src/App.js
-import React from "react";
+// import React from "react";
+// function App(){
+//     const emailRef = React.useRef(null);
+//     const passwordRef = React.useRef(null);
 
-function App() {
-  // 1) สร้าง ref สำหรับ input ทั้งสองช่อง
-  const nameRef = React.useRef(null);
-  const emailRef = React.useRef(null);
+//     function click(){
+//       const emailValue = emailRef.current.value;
+//       const passwordlValue = passwordRef.current.value;
+      
 
-  // 2) ฟังก์ชันเวลาคลิกปุ่ม
-  function handleSubmit() {
-    const nameValue = nameRef.current.value;
-    const emailValue = emailRef.current.value;
+//       alert(`email:${emailValue}\npassword:${passwordlValue}`)
+//     }
+//   return(
+//     <div style={{maxWidth:"400px", margin:"30px auto"}}>
+//       <h1>แบบฟอร์มกรอกข้อมูล</h1>
 
-    // แสดงผลให้ผู้ใช้เห็น (อาจารย์จะชอบถ้าเรามี feedback)
-    alert(`ชื่อ: ${nameValue}\nอีเมล: ${emailValue}`);
+//       <div>
+//         <label>Email:</label><br/>
+//         <input type="text" placeholder="ป้อนข้อมูลตรงนี่" ref={emailRef}/>
+//       </div>
 
-    // ในชีวิตจริงอาจจะส่งข้อมูลไป backend ต่อ (fetch/axios)
-    // แต่ตอนนี้แค่อ่านค่าได้ถือว่าผ่านโจทย์
-  }
+//       <div>
+//         <label>Password:</label><br/>
+//         <input type="password" placeholder="ป้อนข้อมูลตรงนี่" ref={passwordRef}/>
+//       </div>
+//       <br/>
+//       <button onClick={click}>ส่งข้อมูล</button>
+//     </div>
+//   );
+// }
+// export default App; 
 
-  return (
-    <div style={{ maxWidth: "400px", margin: "30px auto", fontFamily: "sans-serif" }}>
-      <h1>แบบฟอร์มลงทะเบียน</h1>
+import React from 'react'
+import FormText from './form-text'
 
-      <div style={{ marginBottom: "10px" }}>
-        <label>ชื่อผู้ใช้:</label><br />
-        <input
-          type="text"
-          placeholder="พิมพ์ชื่อที่นี่..."
-          style={{ width: "100%" }}
-          ref={nameRef} // ผูก ref
-        />
-      </div>
-
-      <div style={{ marginBottom: "10px" }}>
-        <label>อีเมล:</label><br />
-        <input
-          type="email"
-          placeholder="example@mail.com"
-          style={{ width: "100%" }}
-          ref={emailRef} // ผูก ref
-        />
-      </div>
-
-      <button onClick={handleSubmit}>ส่งข้อมูล</button>
-    </div>
-  );
+export default function App() {
+  return <FormText />
 }
-
-export default App;
